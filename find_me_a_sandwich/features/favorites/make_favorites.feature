@@ -6,14 +6,15 @@ Feature: Make Favorites
   Background:
     Given I have a valid account
     And I am logged in
+    And there are merchants for 60606
 
   Scenario: Adding a favorite
-    Given I am on a meal page
-    When I click favorite
-    And I click the favorites page link
-    Then the meal is visible my account as a favorite
+    Given I am looking at a merchant with a menu
+    When I click favorites
+    And I click the my favorites link
+    Then the meal is visible in my account as a favorite
 
   Scenario: duplicate favoriting
-    Given I am on a meal page
-    When that meal is already a favorite
-    Then there is no favorite button
+    Given that menu item is already a favorite
+    When I go to that merchant page
+    Then there is a remove button

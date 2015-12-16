@@ -6,20 +6,20 @@ Feature: Remove Favorites
   Background:
     Given I have a valid account
     And I am logged in
+    And there are merchants for 60606
 
   Scenario: Happy
-    Given I am on the favorites page
-    And I have favorites
+    Given I have specific favorites
+    And I am on the favorites page
     When I click to remove a favorite
     Then that favorite is removed
 
   Scenario: Happy 2 - remove two favorites 
-    Given I am on the favorites page
-    And I have favorites
+    Given I have specific favorites
+    And I am on the favorites page
     When I click to remove a favorite
     And I click to remove another favorite
-    Then that favorite is removed
-    And another favorite is removed
+    Then another favorite is removed
 
   Scenario: Sad 
     Given I am on the favorites page

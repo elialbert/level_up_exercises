@@ -1,3 +1,9 @@
+def create_merchants_with_zip(zip, count)
+  FactoryGirl.create_list(:location, count, zip: zip).map do |location|
+    FactoryGirl.create(:merchant, :with_menus, location: location)
+  end
+end
+
 def search_merchants(location)
   VCR.use_cassette("search_merchants_at_#{location}") do
     find_by_id("location").set(location)

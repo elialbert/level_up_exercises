@@ -10,11 +10,11 @@ Feature: See Favorites
   Scenario: see favorites
     Given I am on the home page
     And I have favorites
-    When I click favorites
+    When I click the my favorites link
     Then I can see all my favorites
 
   Scenario: see no favorites
     Given I am on the home page
     And I have no favorites
-    When I click favorites
+    When I click the my favorites link
     Then I am informed that I have no favorites
