@@ -31,11 +31,11 @@ Given(/^I have no favorites$/) do
 end
 
 When(/^I click the friends favorites button$/) do
-  click_button "Friends Favorites"
+  click_link "Friends Favorites"
 end
 
-When(/^I click favorite$/) do
-  click_button "My Favorites"
+When(/^I click favorites$/) do
+  click_link "My Favorites"
 end
 
 When(/^I click to remove a favorite$/) do
@@ -49,10 +49,6 @@ end
 
 When(/^I click to remove another favorite$/) do
   click_button "Remove from favorites"
-end
-
-When(/^I click the favorites page link$/) do
-  click_button "Favorites"
 end
 
 Then(/^I see my friends favorites$/) do
