@@ -15,7 +15,7 @@ Feature: Remove Favorites
 
   Scenario: Happy 2 - remove two favorites 
     Given I am on the favorites page
-    And I have multiple favorites
+    And I have favorites
     When I click to remove a favorite
     And I click to remove another favorite
     Then that favorite is removed

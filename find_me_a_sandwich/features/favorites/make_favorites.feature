@@ -10,8 +10,8 @@ Feature: Make Favorites
   Scenario: Adding a favorite
     Given I am on a meal page
     When I click favorite
-    And I visit the favorites page
-    The meal is added to my account as a favorite
+    And I click the favorites page link
+    Then the meal is visible my account as a favorite
 
   Scenario: duplicate favoriting
     Given I am on a meal page

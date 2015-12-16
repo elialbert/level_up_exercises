@@ -9,18 +9,20 @@ Feature: friends favorites
 
   Scenario: Happy
     Given I am on the home page
-    And I have friends who have favorites
+    And there are many users
+    And there are other users who have favorites
     When I click the friends favorites button
     Then I see my friends favorites
 
   Scenario: Sad
     Given I am on the home page
-    And I have friends who do not have favorites
+    And there are many users
+    And there are no other users who have favorites
     When I click the friends favorites button
     Then I am informed that my friends have no favorites
 
   Scenario: Bad
     Given I am on the home page
-    And I have no friends
-    When I click fthe friends favorites button
+    And there are no other users
+    When I click the friends favorites button
     Then I am informed that I have no friends
