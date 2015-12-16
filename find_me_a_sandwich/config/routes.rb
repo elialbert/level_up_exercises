@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
   resource :profile, only: [:show, :edit, :update], controller: "users"
+  resources :favorites
 
   root "home#index"
 end
