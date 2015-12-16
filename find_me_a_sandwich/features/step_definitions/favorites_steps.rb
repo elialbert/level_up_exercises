@@ -1,10 +1,12 @@
 Given(/^there are other users who have favorites$/) do
-  @users[0].favorites = FactoryGirl.create_list(:favorite, 1)
-  @users[1].favorites = FactoryGirl.create_list(:favorite, 1)
+  FactoryGirl.create(:favorite, menu_item_id: 1, user_id: @users[:public][0])
+  FactoryGirl.create(:favorite, menu_item_id: 2, user_id: @users[:public][1])
+  FactoryGirl.create(:favorite, menu_item_id: 2, user_id: @users[:public][0])
+  FactoryGirl.create(:favorite, menu_item_id: 1, user_id: @users[:public][1])
 end
 
 Given(/^there are no other users who have favorites$/) do
-  @users.each do |user|
+  @users[:public].each do |user|
     user.favorites = []
   end
 end
@@ -65,15 +67,15 @@ When(/^I click to remove another favorite$/) do
 end
 
 Then(/^I see my friends favorites$/) do
-  expect(page).to have_content("Your friends have 10 favorites")
+  expect(page).to have_content("You have 10 Friends")
 end
 
 Then(/^I am informed that my friends have no favorites$/) do
-  expect(page).to have_content("Your friends have no favorites")
+  expect(page).to have_content("They have 0 Favorites")
 end
 
 Then(/^I am informed that I have no friends$/) do
-  expect(page).to have_content("Sorry, you have no friends!")
+  expect(page).to have_content("You have 0 Friends")
 end
 
 Then(/^the meal is visible in my account as a favorite$/) do

@@ -6,6 +6,7 @@ Feature: friends favorites
   Background:
     Given I have a valid account
     And I am logged in
+    And there are merchants for 60606
 
   Scenario: Happy
     Given I am on the home page
