@@ -7,6 +7,7 @@ Feature: Viewing menus
     Given I have a valid account
     And I am logged in
 
-    #  Scenario: Navigating to a menu from a merchant
-    #When I visit a merchant page
-    #Then I see that merchant's menus
+    Scenario: Navigating to a menu from a merchant
+      Given I am on the home page
+      When I visit a merchant page
+      Then I see that merchant's menus
