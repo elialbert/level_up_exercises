@@ -8,7 +8,7 @@ Feature: Remove Favorites
     And I am logged in
     And there are merchants for 60606
 
-  Scenario: Happy
+  Scenario: Happy removal
     Given I have specific favorites
     And I am on the favorites page
     When I click to remove a favorite
@@ -21,7 +21,7 @@ Feature: Remove Favorites
     And I click to remove another favorite
     Then another favorite is removed
 
-  Scenario: Sad 
+  Scenario: Sad - no favorites to remove
     Given I am on the favorites page
     And I have no favorites
     Then I should not be able to click a remove button
