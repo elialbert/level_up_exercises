@@ -8,6 +8,7 @@ end
 
 Then(/^I can see all my favorites$/) do
   expect(page).to have_content("You have 5 Favorites")
+  expect(page).to have_content("Something something sandwich")
 end
 
 Then(/^I am informed that I have no favorites$/) do
