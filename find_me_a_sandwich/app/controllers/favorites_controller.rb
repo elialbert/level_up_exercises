@@ -5,12 +5,8 @@ class FavoritesController < ApplicationController
   end
 
   def friends
-    @friends = User.visible
-    @total_count = 0
-    @friends_favorites = @friends.each_with_object([]) do |e, a|
-      a << {name: e.full_name, favorites: e.favorites}
-      @total_count += e.favorites.count
-    end
+    @friends = User.visible.where.not(id: current_user.id)
+    @friends_favorites, @total_count = Favorite.friends_favorites(@friends)
   end
 
   def create
