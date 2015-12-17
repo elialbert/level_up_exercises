@@ -1,9 +1,9 @@
 Given(/^there are merchants for 60606$/) do
-  create_merchants_with_zip(60606, 10)
+  create_merchants_with_zip("60606", 10)
 end
 
 Given(/^I search for 60606$/) do
-  fill_in "location", with: "60606"  
+  fill_in "location", with: "60606"
   click_button("Search")
 end
 

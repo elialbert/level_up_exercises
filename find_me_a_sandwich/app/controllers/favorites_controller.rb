@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
   end
 
@@ -10,13 +10,13 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    Favorite.create(user_id: current_user.id, 
+    Favorite.create(user_id: current_user.id,
                     menu_item_id: favorite_params[:menu_item_id])
     redirect_to :back
   end
 
   def destroy
-    Favorite.where(user_id: current_user.id, 
+    Favorite.where(user_id: current_user.id,
                    menu_item_id: favorite_params[:menu_item_id]).delete_all
     redirect_to :back
   end

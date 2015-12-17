@@ -2,13 +2,13 @@ require "rails_helper"
 
 describe Favorite, type: :model do
   let(:favorite) { FactoryGirl.build(:favorite) }
-  let(:users) do 
-    FactoryGirl.create_list(:named_user, 
-                            10, 
-                            profile_visible: true) 
+  let(:users) do
+    FactoryGirl.create_list(:named_user,
+      10,
+      profile_visible: true)
   end
   let(:_) do
-    FactoryGirl.create_list(:location, 4, zip: 60606).map do |location|
+    FactoryGirl.create_list(:location, 4, zip: "60606").map do |location|
       FactoryGirl.create(:merchant, :with_menus, location: location)
     end
   end
@@ -28,7 +28,5 @@ describe Favorite, type: :model do
       expect(total_count).to eq(2)
       expect(friends_favorites[0][:favorites].count).to eq(1)
     end
-
   end
-
 end

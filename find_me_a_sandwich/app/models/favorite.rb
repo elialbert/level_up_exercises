@@ -5,9 +5,9 @@ class Favorite < ActiveRecord::Base
   def self.friends_favorites(friends)
     total_count = 0
     friends_favorites = friends.each_with_object([]) do |e, a|
-      a << {name: e.full_name, favorites: e.favorites}
+      a << { name: e.full_name, favorites: e.favorites }
       total_count += e.favorites.count
     end
-    return friends_favorites, total_count
+    [friends_favorites, total_count]
   end
 end

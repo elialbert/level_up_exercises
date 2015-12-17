@@ -8,5 +8,5 @@ Given(/^I have favorites$/) do
 end
 
 Then(/^that favorite is removed$/) do
-  expect(page).to have_content ("You have 1 Favorite")
+  expect(page).to have_content("You have 1 Favorite")
 end

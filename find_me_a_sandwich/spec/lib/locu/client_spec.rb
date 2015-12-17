@@ -33,7 +33,7 @@ describe Locu::Client do
 
     it "includes any venue parameters included" do
       expected_body = {
-        "venue_queries" => [{ "location" => { "zip" => "60604" } }],
+        "venue_queries" => [{ "location" => { "zip" => "60604" } }]
       }
 
       search
@@ -44,7 +44,7 @@ describe Locu::Client do
 
     it "includes any menu item params" do
       expected_body = {
-        "venue_queries" => [{ "name" => "test_name" }],
+        "venue_queries" => [{ "name" => "test_name" }]
       }
 
       search2
